@@ -1,0 +1,9 @@
+C:\Users\hangm\Documents\GitHub\daft_work\작업실\npp_project1\npp_project1\bin\Debug\npp_project1.dll
+C:\Users\hangm\Documents\GitHub\daft_work\작업실\npp_project1\npp_project1\bin\Debug\npp_project1.pdb
+C:\Users\hangm\Documents\GitHub\daft_work\작업실\npp_project1\npp_project1\obj\x86\Debug\npp_project1.csproj.AssemblyReference.cache
+C:\Users\hangm\Documents\GitHub\daft_work\작업실\npp_project1\npp_project1\obj\x86\Debug\Kbg.NppPluginNET.frmMyDlg.resources
+C:\Users\hangm\Documents\GitHub\daft_work\작업실\npp_project1\npp_project1\obj\x86\Debug\npp_project1.Properties.Resources.resources
+C:\Users\hangm\Documents\GitHub\daft_work\작업실\npp_project1\npp_project1\obj\x86\Debug\npp_project1.csproj.GenerateResource.cache
+C:\Users\hangm\Documents\GitHub\daft_work\작업실\npp_project1\npp_project1\obj\x86\Debug\npp_project1.csproj.CoreCompileInputs.cache
+C:\Users\hangm\Documents\GitHub\daft_work\작업실\npp_project1\npp_project1\obj\x86\Debug\npp_project1.dll
+C:\Users\hangm\Documents\GitHub\daft_work\작업실\npp_project1\npp_project1\obj\x86\Debug\npp_project1.pdb
