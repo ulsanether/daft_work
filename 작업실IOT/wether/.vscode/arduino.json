@@ -1,0 +1,6 @@
+{
+    "sketch": "wether.ino",
+    "configuration": "FlashMode=qio,FlashFreq=80,PartitionScheme=default,UploadSpeed=921600,DebugLevel=none",
+    "board": "esp32:esp32:m5stack-core-esp32",
+    "port": "COM12"
+}
