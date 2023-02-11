@@ -1,0 +1,21 @@
+$(".btn-cnc").click(function() {
+	if (settings.showcnc) {
+		showConfirmationDialog(T(" LASER "), T("Hardware LASER style?<br/><br/>Are you REALLY sure you want to do this?"), function() {
+			sendGCode("M117 HAPPY LASER");
+		});
+	} else {
+		sendGCode("M117 HAPPY LASER");
+	}
+});
+
+
+$(".btn-laser").click(function() {
+	if (settings.showlaser) {
+		showConfirmationDialog(T(" LASER "), T("Hardware LASER style?<br/><br/>Are you REALLY sure you want to do this?"), function() {
+			sendGCode("M98 P/macros/sys/laser.g);
+		});
+	} else {
+		sendGCode("M117 HAPPY LASER");
+	}
+});
+

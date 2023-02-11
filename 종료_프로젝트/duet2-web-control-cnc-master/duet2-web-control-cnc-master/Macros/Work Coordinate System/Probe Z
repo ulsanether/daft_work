@@ -1,0 +1,15 @@
+;This Macro is to be used with an active low touch probe. It does NOT Require adjustment for different endmill sizes. It DOES require adjustments for different probe sizes. Please see comments below.
+
+M291 P"Make sure the probe is connected and is in position." R"Warning" S3
+G91
+G1 Z-0.5
+T1
+M585 Z50 E2 L0 F500 S1
+G10 P1 X0 Y0 Z0
+G10 P2 L20 Z5 ;Please adjust the Z value here to match z offset of your probe.
+G1 Z3
+G55
+M500
+T0
+G90
+M291 P"Probe complete. Please remove probe." R"Success" S1
