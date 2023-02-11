@@ -1,0 +1,46 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>icon/001-upload.png</file>
+    <file>icon/002-cloud.png</file>
+    <file>icon/003-location.png</file>
+    <file>icon/004-configuration.png</file>
+    <file>icon/005-search.png</file>
+    <file>icon/006-chat.png</file>
+    <file>icon/007-browser.png</file>
+    <file>icon/008-inbox.png</file>
+    <file>icon/009-payment.png</file>
+    <file>icon/010-wallet.png</file>
+    <file>icon/011-volume.png</file>
+    <file>icon/012-bookmark.png</file>
+    <file>icon/013-calculator.png</file>
+    <file>icon/014-gallery.png</file>
+    <file>icon/015-navigation.png</file>
+    <file>icon/016-equalizer.png</file>
+    <file>icon/017-music.png</file>
+    <file>icon/018-send.png</file>
+    <file>icon/019-alarm.png</file>
+    <file>icon/020-folder.png</file>
+    <file>icon/021-lock.png</file>
+    <file>icon/022-contact-book.png</file>
+    <file>icon/023-tasks.png</file>
+    <file>icon/024-star.png</file>
+    <file>icon/025-calendar.png</file>
+    <file>icon/026-settings.png</file>
+    <file>icon/027-protection.png</file>
+    <file>icon/028-forbidden.png</file>
+    <file>icon/029-download.png</file>
+    <file>icon/030-compass.png</file>
+    <file>icon/body.png</file>
+    <file>icon/body1.png</file>
+    <file>icon/body2.png</file>
+    <file>icon/body3.png</file>
+    <file>icon/home.png</file>
+    <file>icon/house00.png</file>
+    <file>icon/house01.png</file>
+    <file>icon/icon.qrc</file>
+    <file>icon/weather01.png</file>
+  </qresource>
+  <qresource prefix="logo">
+    <file>path4518.png</file>
+  </qresource>
+</RCC>

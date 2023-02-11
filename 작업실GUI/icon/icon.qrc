@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>icon/body2.png</file>
+    <file>icon/body3.png</file>
+    <file>icon/body1.png</file>
+    <file>icon/body.png</file>
+    <file>icon/home.png</file>
+    <file>icon/002-cloud.png</file>
+    <file>icon/004-configuration.png</file>
+    <file>icon/011-volume.png</file>
+    <file>icon/019-alarm.png</file>
+  </qresource>
+</RCC>
