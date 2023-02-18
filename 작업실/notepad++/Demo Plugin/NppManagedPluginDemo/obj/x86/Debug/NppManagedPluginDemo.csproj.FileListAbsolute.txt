@@ -1,0 +1,9 @@
+E:\GIT\notepad++\Demo Plugin\NppManagedPluginDemo\obj\x86\Debug\Kbg.Demo.Namespace.frmGoToLine.resources
+E:\GIT\notepad++\Demo Plugin\NppManagedPluginDemo\obj\x86\Debug\NppPluginNET.Properties.Resources.resources
+E:\GIT\notepad++\Demo Plugin\NppManagedPluginDemo\obj\x86\Debug\NppManagedPluginDemo.csproj.GenerateResource.cache
+E:\GIT\notepad++\Demo Plugin\NppManagedPluginDemo\obj\x86\Debug\NppManagedPluginDemo.csproj.CoreCompileInputs.cache
+E:\GIT\notepad++\Demo Plugin\NppManagedPluginDemo\bin\Debug\Demo.dll
+E:\GIT\notepad++\Demo Plugin\NppManagedPluginDemo\bin\Debug\Demo.pdb
+E:\GIT\notepad++\Demo Plugin\NppManagedPluginDemo\obj\x86\Debug\NppManagedPluginDemo.csproj.AssemblyReference.cache
+E:\GIT\notepad++\Demo Plugin\NppManagedPluginDemo\obj\x86\Debug\Demo.dll
+E:\GIT\notepad++\Demo Plugin\NppManagedPluginDemo\obj\x86\Debug\Demo.pdb

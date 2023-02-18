@@ -1,0 +1,9 @@
+E:\GIT\notepad++\WordPad++\WordPadPlusPlus\bin\Debug\WordPad++.dll
+E:\GIT\notepad++\WordPad++\WordPadPlusPlus\bin\Debug\WordPad++.pdb
+E:\GIT\notepad++\WordPad++\WordPadPlusPlus\obj\x86\Debug\WordPadPlusPlus.csproj.AssemblyReference.cache
+E:\GIT\notepad++\WordPad++\WordPadPlusPlus\obj\x86\Debug\Kbg.NppPluginNET.frmMyDlg.resources
+E:\GIT\notepad++\WordPad++\WordPadPlusPlus\obj\x86\Debug\WordPad__.Properties.Resources.resources
+E:\GIT\notepad++\WordPad++\WordPadPlusPlus\obj\x86\Debug\WordPadPlusPlus.csproj.GenerateResource.cache
+E:\GIT\notepad++\WordPad++\WordPadPlusPlus\obj\x86\Debug\WordPadPlusPlus.csproj.CoreCompileInputs.cache
+E:\GIT\notepad++\WordPad++\WordPadPlusPlus\obj\x86\Debug\WordPad++.dll
+E:\GIT\notepad++\WordPad++\WordPadPlusPlus\obj\x86\Debug\WordPad++.pdb
