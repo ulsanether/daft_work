@@ -20,35 +20,29 @@ namespace Kbg.NppPluginNET
            
             StringBuilder sbIniFilePath = new StringBuilder(Win32.MAX_PATH);
             Win32.SendMessage(PluginBase.nppData._nppHandle, (uint)NppMsg.NPPM_GETPLUGINSCONFIGDIR, Win32.MAX_PATH, sbIniFilePath);
-          
             PluginBase.SetCommand(0, "WordPad++ NewFile", newFile);
-            PluginBase.SetCommand(1, "Main Label", SetMain, new ShortcutKey(false, false, false, Keys.a));
+            PluginBase.SetCommand(1, "Main Label", SetMain, new ShortcutKey(false, false, false, Keys.None));
 			 PluginBase.SetCommand(2, "&About WordPad++", ShowAbout, new ShortcutKey(false, false, false, Keys.None));
         }
 
         static void newFile()
         {
             notepad.FileNew();
-            editor.SetText("WordPad++ set C-Language");
-            var rest = editor.GetLine(0);
             editor.WordRight();
-            editor.SetText(rest);
- 
-            insertDateTime(false);
-
+            editor.ReplaceSel($@"WordPad++ set C-Languge.
+");
+            string dateTime = string.Format("{0} {1} \n\n\n", DateTime.Now.ToShortTimeString(), DateTime.Now.ToShortDateString());
+            editor.ReplaceSel(dateTime);
         }
 
 
 
 		static void SetMain(){
-			
-		editor.WordRight();
-		
+
+            editor.ReplaceSel("[1]");  //line number base 
 
 
-
-		
-		}
+        }
 		
 		
         static void insertDateTime(bool longFormat)
