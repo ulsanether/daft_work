@@ -5,9 +5,12 @@ import os
 import openai
 import io
 import sys
+from google.cloud import texttospeech
+import wave
+
 # 인증 정보를 로드합니다.
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-gpt_api_key = "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"
+gpt_api_key = "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"
 key_file_path = "chat-gpt-378811-6f49c9d46b3e.json"
 
 openai.api_key =gpt_api_key
@@ -52,23 +55,17 @@ try:
         model="text-davinci-003",
         prompt=text,
         temperature=0.7,
-        max_tokens=256,
+        max_tokens=1000,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0
     )
-
-
     print(response_gpt.choices[0].text)
-
-
 
 finally:
     # 스트림을 닫아줍니다.
     stream.stop_stream()
     stream.close()
     p.terminate()
-
-
 
 
