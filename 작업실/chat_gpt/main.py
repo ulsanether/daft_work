@@ -23,7 +23,7 @@ stream = p.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, fram
 
 # Speech-to-Text API 클라이언트를 초기화합니다.
 client = speech.SpeechClient(credentials=credentials)
-
+texttospeech_client = texttospeech.TextToSpeechClient(credentials=credentials)
 # 입력 받은 데이터를 저장할 리스트를 초기화합니다.
 audio_data = []
 
@@ -61,6 +61,24 @@ try:
         presence_penalty=0
     )
     print(response_gpt.choices[0].text)
+    texttospeech_client = texttospeech.TextToSpeechClient(credentials=credentials)
+    synthesis_input = texttospeech.SynthesisInput(text=response_gpt.choices[0].text)
+    voice = texttospeech.VoiceSelectionParams(
+          language_code="ko-KR",
+    )
+    audio_config = texttospeech.AudioConfig(
+        audio_encoding=texttospeech.AudioEncoding.LINEAR16,
+        speaking_rate=1.0,
+        pitch=0.0,
+        volume_gain_db=0.0,
+        sample_rate_hertz=16000
+    )
+    response = texttospeech_client.synthesize_speech(
+        input=synthesis_input, voice=voice, audio_config=audio_config
+    )
+    with open("output.wav", "wb") as out:
+        out.write(response.audio_content)
+        print('Audio content written to file "output.wav"')
 
 finally:
     # 스트림을 닫아줍니다.

@@ -39,8 +39,10 @@ namespace Kbg.NppPluginNET
 
         
         static void SetSub()
-        {
-
+        {//컬러 변경 코드 
+            editor.ReplaceSel("[2]");  //line number base
+            
+                
 
 
         }
