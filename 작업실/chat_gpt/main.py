@@ -1,88 +1,74 @@
-import requests
-import io
-import os
-from google.oauth2 import service_account
+import pyaudio
 from google.cloud import speech_v1p1beta1 as speech
-from playsound import playsound
+from google.oauth2 import service_account
+import os
+import openai
+import io
+import sys
+# 인증 정보를 로드합니다.
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+gpt_api_key = "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"
+key_file_path = "chat-gpt-378811-6f49c9d46b3e.json"
 
-# 구글 클라우드 프로젝트 ID
-project_id = "<your-project-id>"
+openai.api_key =gpt_api_key
 
-# 구글 서비스 계정 키 파일 경로
-key_file_path = "<your-key-file-path>"
+credentials = service_account.Credentials.from_service_account_file(key_file_path)
 
-# ChatGPT API 엔드포인트 URL
-gpt_url = "https://api.openai.com/v1/engines/davinci-codex/completions"
+# 마이크에서 오디오 스트림을 가져옵니다.
+p = pyaudio.PyAudio()
+stream = p.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=1024)
 
-# ChatGPT API 키
-gpt_api_key = "<your-gpt-api-key>"
-
-# 구글 음성인식 API 클라이언트
-credentials = service_account.Credentials.from_service_account_file(
-    key_file_path,
-    scopes=["https://www.googleapis.com/auth/cloud-platform"],
-)
+# Speech-to-Text API 클라이언트를 초기화합니다.
 client = speech.SpeechClient(credentials=credentials)
 
+# 입력 받은 데이터를 저장할 리스트를 초기화합니다.
+audio_data = []
 
-# 음성인식 함수
-def transcribe_audio():
-    # 오디오 파일 경로
-    audio_file = "<your-audio-file-path>"
+try:
+    # 10초간 오디오 데이터를 읽어옵니다.
+    for i in range(0, int(16000 / 1024 * 10)):
+        data = stream.read(1024)
+        audio_data.append(data)
 
-    # 오디오 파일 읽기
-    with io.open(audio_file, "rb") as f:
-        content = f.read()
-
-    # 오디오 채널 설정
-    audio = speech.RecognitionAudio(content=content)
+    # 오디오 데이터를 Speech-to-Text API로 변환합니다.
+    audio = speech.RecognitionAudio(content=b"".join(audio_data))
     config = speech.RecognitionConfig(
         encoding=speech.RecognitionConfig.AudioEncoding.LINEAR16,
         sample_rate_hertz=16000,
         language_code="ko-KR",
-        audio_channel_count=2,
+        enable_word_time_offsets=True,
+        enable_automatic_punctuation=True
+    )
+    response = client.recognize(config=config, audio=audio)
+
+
+    if response.results:
+        # Speech-to-Text API에서 추출한 텍스트를 출력합니다.
+        text = response.results[0].alternatives[0].transcript
+        print(text)
+
+
+    response_gpt = openai.Completion.create(
+        model="text-davinci-003",
+        prompt=text,
+        temperature=0.7,
+        max_tokens=256,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0
     )
 
-    # 오디오 전송 및 음성인식 결과 가져오기
-    response = client.recognize(request={"config": config, "audio": audio})
-    if len(response.results) > 0:
-        transcript = response.results[0].alternatives[0].transcript
-        return transcript
-    else:
-        return ""
+
+    print(response_gpt.choices[0].text)
 
 
-# ChatGPT API 요청 함수
-def query_gpt(text):
-    response = requests.post(
-        url=gpt_url,
-        headers={
-            "Content-Type": "application/json",
-            "Authorization": f"Bearer {gpt_api_key}",
-        },
-        json={
-            "prompt": text,
-            "max_tokens": 50,
-            "temperature": 0.7,
-            "n": 1,
-            "stop": None,
-        },
-    )
-    if response.status_code == 200:
-        response_data = response.json()
-        output_text = response_data["choices"][0]["text"]
-        return output_text
-    else:
-        return ""
+
+finally:
+    # 스트림을 닫아줍니다.
+    stream.stop_stream()
+    stream.close()
+    p.terminate()
 
 
-# 메인 함수
-def main():
-    # 음성인식
-    print("Listening...")
-    text = transcribe_audio()
-    print(f"You said: {text}")
 
-    # ChatGPT API 요청
-    print("Querying ChatGPT...")
-    response_text = query_g
+
