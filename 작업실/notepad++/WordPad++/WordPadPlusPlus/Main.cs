@@ -22,7 +22,8 @@ namespace Kbg.NppPluginNET
             Win32.SendMessage(PluginBase.nppData._nppHandle, (uint)NppMsg.NPPM_GETPLUGINSCONFIGDIR, Win32.MAX_PATH, sbIniFilePath);
             PluginBase.SetCommand(0, "WordPad++ NewFile", newFile);
             PluginBase.SetCommand(1, "Main Label", SetMain, new ShortcutKey(false, false, false, Keys.None));
-			 PluginBase.SetCommand(2, "&About WordPad++", ShowAbout, new ShortcutKey(false, false, false, Keys.None));
+            PluginBase.SetCommand(2, "Sub Label", SetSub, new ShortcutKey(false, false, false, Keys.None));
+            PluginBase.SetCommand(2, "&About WordPad++", ShowAbout, new ShortcutKey(false, false, false, Keys.None));
         }
 
         static void newFile()
@@ -30,9 +31,20 @@ namespace Kbg.NppPluginNET
             notepad.FileNew();
             editor.WordRight();
             editor.ReplaceSel($@"WordPad++ set C-Languge.
+
 ");
             string dateTime = string.Format("{0} {1} \n\n\n", DateTime.Now.ToShortTimeString(), DateTime.Now.ToShortDateString());
             editor.ReplaceSel(dateTime);
+        }
+
+        
+        static void SetSub()
+        {//컬러 변경 코드 
+            editor.ReplaceSel("[2]");  //line number base
+            
+                
+
+
         }
 
 
