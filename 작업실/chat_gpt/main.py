@@ -10,7 +10,7 @@ import wave
 
 # 인증 정보를 로드합니다.
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-gpt_api_key = "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"
+gpt_api_key = "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"
 key_file_path = "chat-gpt-378811-6f49c9d46b3e.json"
 
 openai.api_key =gpt_api_key
