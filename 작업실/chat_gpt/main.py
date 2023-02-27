@@ -29,7 +29,7 @@ audio_data = []
 
 try:
     # 10초간 오디오 데이터를 읽어옵니다.
-    for i in range(0, int(16000 / 1024 * 10)):
+    for i in range(0, int(16000 / 1024 * 5)):
         data = stream.read(1024)
         audio_data.append(data)
 
