@@ -1,5 +1,5 @@
 import pyaudio
-from google.cloud import speech_v1p1beta1 as speech
+from google.cloud import speech_v1p1beta1 as speech, texttospeech
 from google.oauth2 import service_account
 import os
 import openai
@@ -7,7 +7,7 @@ import io
 import sys
 # 인증 정보를 로드합니다.
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-gpt_api_key = "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"
+gpt_api_key = "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"
 key_file_path = "chat-gpt-378811-6f49c9d46b3e.json"
 
 openai.api_key =gpt_api_key
@@ -60,25 +60,6 @@ try:
 
 
     print(response_gpt.choices[0].text)
-    texttospeech_client = texttospeech.TextToSpeechClient(credentials=credentials)
-    synthesis_input = texttospeech.SynthesisInput(text=response_gpt.choices[0].text)
-    voice = texttospeech.VoiceSelectionParams(
-          language_code="ko-KR",
-    )
-    audio_config = texttospeech.AudioConfig(
-        audio_encoding=texttospeech.AudioEncoding.LINEAR16,
-        speaking_rate=1.0,
-        pitch=0.0,
-        volume_gain_db=0.0,
-        sample_rate_hertz=16000
-    )
-    response = texttospeech_client.synthesize_speech(
-        input=synthesis_input, voice=voice, audio_config=audio_config
-    )
-    with open("output.wav", "wb") as out:
-        out.write(response.audio_content)
-        print('Audio content written to file "output.wav"')
-
 
 
 finally:
