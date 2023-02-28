@@ -5,9 +5,6 @@ import os
 import openai
 import io
 import sys
-from google.cloud import texttospeech
-import wave
-
 # 인증 정보를 로드합니다.
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 gpt_api_key = "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"
@@ -55,11 +52,13 @@ try:
         model="text-davinci-003",
         prompt=text,
         temperature=0.7,
-        max_tokens=1000,
+        max_tokens=256,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0
     )
+
+
     print(response_gpt.choices[0].text)
     texttospeech_client = texttospeech.TextToSpeechClient(credentials=credentials)
     synthesis_input = texttospeech.SynthesisInput(text=response_gpt.choices[0].text)
@@ -77,10 +76,14 @@ try:
         input=synthesis_input, voice=voice, audio_config=audio_config
     )
 
+
+
 finally:
     # 스트림을 닫아줍니다.
     stream.stop_stream()
     stream.close()
     p.terminate()
+
+
 
 
