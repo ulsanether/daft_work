@@ -5,9 +5,15 @@ import os
 import openai
 import io
 import sys
+from gtts import gTTS
+import playsound
+
+
+
+
 # 인증 정보를 로드합니다.
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-gpt_api_key = "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"
+gpt_api_key = "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"
 key_file_path = "chat-gpt-378811-6f49c9d46b3e.json"
 
 openai.api_key =gpt_api_key
@@ -60,6 +66,13 @@ try:
 
 
     print(response_gpt.choices[0].text)
+
+    ko_text = response_gpt.choices[0].text
+    tts = gTTS(ko_text, lang='ko')
+    tts.save("tts.mp3")
+
+    playsound.playsound("tts.mp3")
+
 
 
 finally:

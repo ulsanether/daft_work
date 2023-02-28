@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="737d9a2b-043c-4efb-ab18-35ab6ccc908f" name="Changes" comment="챗 gpt 테스트용">
+      <change afterPath="$PROJECT_DIR$/tts.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tts.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
