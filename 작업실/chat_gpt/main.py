@@ -13,7 +13,8 @@ import playsound
 
 # 인증 정보를 로드합니다.
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-gpt_api_key = "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"
+gpt_api_key = "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"
+
 key_file_path = "chat-gpt-378811-6f49c9d46b3e.json"
 
 openai.api_key =gpt_api_key
@@ -31,8 +32,8 @@ texttospeech_client = texttospeech.TextToSpeechClient(credentials=credentials)
 audio_data = []
 
 try:
-    # 10초간 오디오 데이터를 읽어옵니다.
-    for i in range(0, int(16000 / 1024 * 5)):
+    #10초간 오디오 데이터를 입력받습니다.
+    for i in range(0, int(16000 / 1024 * 4)):
         data = stream.read(1024)
         audio_data.append(data)
 
@@ -54,24 +55,22 @@ try:
         print(text)
 
 
-    response_gpt = openai.Completion.create(
-        model="text-davinci-003",
-        prompt=text,
-        temperature=0.7,
-        max_tokens=256,
-        top_p=1,
-        frequency_penalty=0,
-        presence_penalty=0
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "user", "content": text},
+        ],
+        temperature=0,
     )
 
 
-    print(response_gpt.choices[0].text)
+    print(response['choices'][0]['message']['content'])
 
-    ko_text = response_gpt.choices[0].text
-    tts = gTTS(ko_text, lang='ko')
-    tts.save("tts.mp3")
+    tts = gTTS(response['choices'][0]['message']['content'], lang='ko')
+    tts.save("response.mp3")
+    playsound.playsound("response.mp3")
+    os.remove("response.mp3")
 
-    playsound.playsound("tts.mp3")
 
 
 
