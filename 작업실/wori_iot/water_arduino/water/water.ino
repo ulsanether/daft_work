@@ -29,7 +29,11 @@ void setup() {
   RTC.begin();
   digitalWrite(2, HIGH);
   digitalWrite(4, HIGH);
+<<<<<<< Updated upstream
    Serial.println(22222);
+=======
+  encoder = new ClickEncoder(11, 10, 9);
+>>>>>>> Stashed changes
 #if SETUP_T == 1
   Serial.println("first_debug_mode");
   RTC.adjust(DateTime(2022, 4, 1, 0, 0, 0));
@@ -273,10 +277,17 @@ void basic_display(int i) {
     display.print(" = ");         //설정 시간
     display.print(now_work_time);  //작동할 시간 단위
     display.print(":");            //설정 시간
+<<<<<<< Updated upstream
     display.println(bun);            //작동할 분 단위
    //display.print("[");
     //display.print(((now.day() * 24) * 60) + ((now.hour() * 60)) + now.minute() - 1440);
     //display.println("]");
+=======
+    display.print(bun);            //작동할 분 단위
+    display.print(" [");
+    display.print(((now.day() * 24) * 60) + ((now.hour() * 60)) + now.minute() - 1440); //현재 시간 
+    display.println("]");
+>>>>>>> Stashed changes
     display.setTextColor(SSD1306_BLACK, SSD1306_WHITE);  // Draw 'inverse' text
     display.print(" Power  ");
     display.print(motor_pwm_power);
@@ -383,9 +394,14 @@ int getRtcTime() {
 }
 
 
+<<<<<<< Updated upstream
 int now_algo(int all_now_minute) {
   int rest_time = hours_72 * 60 - minute_60;  //휴식 시간                                                                                      //작동 시간
   int array_value = 43200 / (hours_72 * 60);  //전체 반복 횟수
+=======
+int now_algo(int all_now_minute) {                                                                                     //작동 시간
+  int array_value = 43200 / (hours_72 * 60); //전체 반복 횟수
+>>>>>>> Stashed changes
   static int count_value = 0;
   int val = motor_pwm_power * 24;
   if(val > 220){
@@ -403,17 +419,28 @@ int now_algo(int all_now_minute) {
       //Serial.println(count_value);
     }
     if (all_now_minute < all_data_time - rest_time) {
+<<<<<<< Updated upstream
 
      // Serial.println("펌프 작동");
       toogle_motor = true;
 
       analogWrite(5, val);
+=======
+      Serial.println("펌프 작동");
+      toogle_motor = true;
+      analogWrite(6, val);
+>>>>>>> Stashed changes
 
     } else if (all_now_minute > all_data_time - rest_time) {
       //펌프 휴식
+<<<<<<< Updated upstream
       //Serial.println("펌프 휴식");
 
-      analogWrite(5, 0);  //포트 번호 확인하고 할것 
+      analogWrite(5, 0);
+=======
+      Serial.println("펌프 휴식");
+      analogWrite(6, 0);
+>>>>>>> Stashed changes
       toogle_motor = true;
     }
     if (43199 < all_data_time) {
