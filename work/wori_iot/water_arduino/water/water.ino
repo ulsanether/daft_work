@@ -11,34 +11,36 @@ RTC_DS1307 RTC;
 bool toogle_motor;
 void setup() {
   Serial.begin(9600);
+
   Serial.println(11111);
   pinMode(2, OUTPUT);
   pinMode(4, OUTPUT);
   pinMode(8, OUTPUT);
   pinMode(3, OUTPUT);
   digitalWrite(2, LOW);
-   digitalWrite(3, LOW);
+  digitalWrite(3, LOW);
   digitalWrite(8, HIGH);
-  pinMode(5, OUTPUT);
-  RTC.begin();
-  digitalWrite(2, HIGH);
   digitalWrite(4, HIGH);
+  encoder = new ClickEncoder(11, 10, 9);
 
-  int now_time = getRtcTime();
-  Serial.println(now_time);
 #if SETUP_T == 1
   Serial.println("first_debug_mode");
-  RTC.adjust(DateTime(2022, 4, 1, 0, 0, 0));
+
   EEPROMWrite(0, 0);
   EEPROMWrite(1, 1);
   EEPROMWrite(2, 2);
   EEPROMWrite(3, 3);
+    RTC.adjust(DateTime(2022, 4, 1, 0, 0, 0));
 #endif
 #if SETUP_T == 2
   RTC.adjust(DateTime(2022, 4, 1, 0, 0, 0));  //무조선 리셋 스타일vb 
 #endif
-
-
+    if(!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) {
+    Serial.println(F("SSD1306 allocation failed"));
+    for(;;); // Don't proceed, loop forever
+  }
+  Serial.println(2221);
+  RTC.begin();
   ////////////////eeprom 셋업
   motor_pwm_power = EEPROMRead(0);  //모터 파워 셋업
   hours_72 = EEPROMRead(1);
@@ -47,13 +49,6 @@ void setup() {
   now_work_time = minute_60 / 60;
   bun = minute_60 % 60;
   delay(1000);
-
-  if (!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) {
-    while (1) {
-      Serial.println(F("SSD1306 allocation failed"));
-    }
-  }
-
   
   display.clearDisplay();
   display.display();
@@ -159,14 +154,14 @@ void time_set() {
       if (hours_set == true) {
         hours_72++;
       } else if (hours_set == false) {
-        minute_60 += 10;
+        minute_60 += 1;
       }
       value_act = 125;
     } else if (value_act < value_act1) {
       if (hours_set == true) {
         hours_72--;
       } else if (hours_set == false) {
-        minute_60 -= 10;
+        minute_60 -= 1;
       }
       value_act = 125;
     }
