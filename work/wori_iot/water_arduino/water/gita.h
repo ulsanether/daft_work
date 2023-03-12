@@ -15,7 +15,7 @@
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 ClickEncoder *encoder;
-
+  encoder = new ClickEncoder(11, 10, 9);
 int all_data_time = 0;
 bool Running = false;
 bool memu_set_value = true;
