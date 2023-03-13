@@ -3,7 +3,7 @@
 #include "Water_pump.h"
 #include <RTClib.h>
 #include "Eeprom.h"
-#define SETUP_T 0                       //타임 리셋 방식은 2
+#define SETUP_T 1                  //타임 리셋 방식은 2
 RTC_DS1307 RTC;
 
 
@@ -11,7 +11,6 @@ RTC_DS1307 RTC;
 bool toogle_motor;
 void setup() {
   Serial.begin(9600);
-
   Serial.println(11111);
   pinMode(2, OUTPUT);
   pinMode(4, OUTPUT);
@@ -22,7 +21,7 @@ void setup() {
   digitalWrite(8, HIGH);
   digitalWrite(4, HIGH);
   encoder = new ClickEncoder(11, 10, 9);
-
+  RTC.begin();
 #if SETUP_T == 1
   Serial.println("first_debug_mode");
 
@@ -30,7 +29,7 @@ void setup() {
   EEPROMWrite(1, 1);
   EEPROMWrite(2, 2);
   EEPROMWrite(3, 3);
-    RTC.adjust(DateTime(2022, 4, 1, 0, 0, 0));
+   RTC.adjust(DateTime(2022, 4, 1, 0, 0, 0));
 #endif
 #if SETUP_T == 2
   RTC.adjust(DateTime(2022, 4, 1, 0, 0, 0));  //무조선 리셋 스타일vb 
@@ -40,7 +39,7 @@ void setup() {
     for(;;); // Don't proceed, loop forever
   }
   Serial.println(2221);
-  RTC.begin();
+
   ////////////////eeprom 셋업
   motor_pwm_power = EEPROMRead(0);  //모터 파워 셋업
   hours_72 = EEPROMRead(1);
