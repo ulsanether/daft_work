@@ -63,13 +63,16 @@ try:
         temperature=0,
     )
 
-
     print(response['choices'][0]['message']['content'])
 
     tts = gTTS(response['choices'][0]['message']['content'], lang='ko')
     tts.save("response.mp3")
     playsound.playsound("response.mp3")
+    #mp3  파일 삭제
     os.remove("response.mp3")
+
+
+
 
 
 
