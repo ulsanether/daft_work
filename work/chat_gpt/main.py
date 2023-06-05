@@ -12,7 +12,7 @@ import playsound
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 gpt_api_key = "################################t"
-key_file_path = "chat-gpt-378811-6f49c9d46b3e.json"
+key_file_path = "#########.json"
 openai.api_key =gpt_api_key
 credentials = service_account.Credentials.from_service_account_file(key_file_path)
 p = pyaudio.PyAudio()
