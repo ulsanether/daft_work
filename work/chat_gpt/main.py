@@ -10,8 +10,6 @@ import playsound
 
 
 
-
-
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 gpt_api_key = "################################t"
 key_file_path = "chat-gpt-378811-6f49c9d46b3e.json"
@@ -24,8 +22,9 @@ client = speech.SpeechClient(credentials=credentials)
 texttospeech_client = texttospeech.TextToSpeechClient(credentials=credentials)
 
 audio_data = []
-try:
 
+
+try:
     for i in range(0, int(16000 / 1024 * 4)):
         data = stream.read(1024)
         audio_data.append(data)
@@ -41,6 +40,8 @@ try:
     if response.results:
         text = response.results[0].alternatives[0].transcript
         print(text)
+
+
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
@@ -48,12 +49,13 @@ try:
         ],
         temperature=0,
     )
+
+
     print(response['choices'][0]['message']['content'])
     tts = gTTS(response['choices'][0]['message']['content'], lang='ko')
     tts.save("response.mp3")
     playsound.playsound("response.mp3")
     os.remove("response.mp3")
-
 
 
 
