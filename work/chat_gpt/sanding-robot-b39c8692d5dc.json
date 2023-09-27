@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "sanding-robot",
+  "private_key_id": "b39c8692d5dc51f43d4ca12373d3b131e888e4b6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDLgzQsgP8uPoSW\nsG1Vhmz1N2sYnN0kH62TH29FpY2tC6X5/S8YMLqEUJkzVXaJA4xxKDbqnvtKm0qz\n/n2XRCyKUygqmLTu8awDsh8P58TsmMr6qJUhG3W5YGlNYCHApV/5pCCd6wy4y3Gp\n1L42Y6dpHsLTdE2wHo83AmuVm/mMLj9YVaDd4uoY5Ks/Latpg75Bxtvy5y8zalJf\nb9Mcz0Op14pCgec9nkaerPyUUmj8EmzgawaEEwbuL62HZBVJMfvqoa5v1+2pQza+\n8K8XKqJimUUWCCDVHyyCFaeNb3qlsIF0l9p1oJZ/G9yZzBBR1HIJZGGXzwyDG9KA\nk5nQRTmJAgMBAAECggEAD74fTXudDo+F478G3IeaUU28Jxp05AdFsgyYdIn3iUKB\nafK/4qsotahWcYLtUtct1TY7KUl32HzMYCgR89Jkotg6UmRsFDlcCRBaS5MUlKJg\nV6UUaowC2BgxJri5yhRnQprQbk0+BEpLvJg/lPPlTo7NAcM/zzcawcwzuxsAFTiY\nGZwT19V3CjhGoc6jt+AzIFiyKg5/6ne9W6ozNRUy9LDdnL2hdfq+cGNtmSvzdK1h\nsBFbbaOc+blY9EYROSamJ1fpmnUmvZnGBQvkmSK4tKlgrPW3bZbcG8/UgmzawWkA\nRZOM7QF8Tw184MSzEYaZ/XzMgl+OFbk8vuxF8Mz10QKBgQDpkt+loU4jJ/z3It48\niUmT69CCiB2Xl+X682tKLQJUQiQF3IbIXmgbHUN/KDN/BBf/C7MoHRTngxpWCuMb\n0jeHxzHMDvATIqcKkhdqWNvzcQDcd0qJzt/Ru1E5Fi+2Ju80MjlMx/ttQ2Mkjc6A\nzEwKVqqKe8XenJfApjAqv6BTywKBgQDfDXDHDB5jVhhrpzbLVx8mOmEyDVBruifh\nSfHEPH7DhMGUmPXrWByJZKKsajmBGuFDVxbefk9kWZhWWqjaJ9iDq/UmFibvRb7v\nCEXlRayD1IZnkql+IlRbP1uApu4lIhhayJRRS80rTol1CMzZavKYNhRZ9X5E3NB1\nTdV5Jo4FewKBgCZWgjkIee/RT3ctFPcwvY/3A9l5CApq10fSjoi1TI2R8aG4qbLX\ntBTHP93uNk2h2WJ2hCiQZW7+mOMIlHBrl8vEiUrqJMOvS2Wzxv4gqbGSmcaWGfj2\nqMwfB9zr5FbsmxShLcCJjp5Hkk1crUl8vvpvcTybxkWcxFfNr1hE7cbzAoGAM7Vw\n9KQJk2vNI3/TQxaCYSFdkPXnM+InBqJWyvBfTsJDAkjnkdSOYQeUcrX5eMWbfTn+\nUjwj+ZaPq00/IbvlBLljjp3KDuQzXESlt34MfU9SjUZBxrz8o16vvsZ0JOWfkcQ4\nJhSVjrmZQil1G94gOUsoMqanzB0IsnkFyR04BWsCgYA/Kebolvw4EOw0Dssnfl6z\nLULHRD6NuZwBs3NN6LjWfYQCLNsClFYwYxMy0nsOqMLP5x5Brsd3fveNonGziOZh\nuOIwKB+Iz9PL7uD/ZrFQC1IlOR3Xmt622z6R1EmnMMUbfB3IWwdxSEhWnqWcOs5r\no8N9uAoqLEWSmpkgC7SqgQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "sanding-robot@appspot.gserviceaccount.com",
+  "client_id": "103459375785800843381",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sanding-robot%40appspot.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

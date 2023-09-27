@@ -11,8 +11,8 @@ import playsound
 
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-gpt_api_key = ""
-key_file_path = ""
+gpt_api_key = "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"
+key_file_path = "sanding-robot-b39c8692d5dc.json"
 openai.api_key =gpt_api_key
 credentials = service_account.Credentials.from_service_account_file(key_file_path)
 p = pyaudio.PyAudio()
