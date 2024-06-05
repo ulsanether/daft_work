@@ -1,0 +1,11 @@
+{
+    "timeline.excludeSources": [],
+    "arduino.path": "C:/Program Files (x86)/Arduino",
+    "arduino.commandPath": "arduino_debug.exe",
+    "arduino.additionalUrls": "",
+    "arduino.logLevel": "info",
+    "arduino.enableUSBDetection": true,
+    "arduino.disableTestingOpen": false,
+    "arduino.skipHeaderProvider": false,
+    // "terminal.integrated.shellArgs.windows": ["/K", "chcp 65001"],
+}

@@ -1,0 +1,48 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:\\Users\\${env:Username}\\AppData\\Local\\Arduino15\\",
+               "C:\\Users\\hangm\\OneDrive\\문서\\Arduino\\libraries\\**",
+               "C:\\Program Files (x86)\\Arduino\\libraries\\**",
+               "C:\\Program Files (x86)\\Arduino\\tools\\**",
+            
+               "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\**",
+               "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino\\",
+               "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\libraries\\EEPROM\\",
+               "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\libraries\\SPI\\",
+               "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\libraries\\SoftwareSerial\\",
+               "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\libraries\\Wire\\",
+               "C:\\Program Files (x86)\\Arduino\\hardware\\tools\\avr\\avr\\include\\",
+               "C:\\Program Files (x86)\\Arduino\\hardware\\tools\\avr\\avr\\include\\avr\\",
+               "C:\\Program Files (x86)\\Arduino\\hardware\\tools\\avr\\avr\\include\\compat\\",
+               "C:\\Program Files (x86)\\Arduino\\hardware\\tools\\avr\\avr\\include\\util\\",
+               "C:\\Program Files (x86)\\Arduino\\hardware\\tools\\avr\\lib\\gcc\\avr\\7.3.0\\include\\",
+                "C:\\Program Files (x86)\\Arduino\\hardware\\tools\\avr\\lib\\gcc\\avr\\7.3.0\\include-fixed\\"
+            ],
+            "browse": {
+                "path": [
+
+                ]
+            },
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "forcedInclude": [
+                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino\\Arduino.h"
+            ],
+            "windowsSdkVersion": "10.0.18362.0",
+            "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/bin/Hostx64/x64/cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "msvc-x64"
+        }
+    ],
+
+    
+    "version": 4
+}
